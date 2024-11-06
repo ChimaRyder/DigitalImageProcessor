@@ -12,9 +12,11 @@ namespace DigitalImageProcessor
 {
     public partial class Form1 : Form
     {
+        Form2 somthn;
         public Form1()
         {
             InitializeComponent();
+            somthn = new Form2();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -179,6 +181,13 @@ namespace DigitalImageProcessor
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             processed.Save(saveFileDialog1.FileName);
+        }
+
+        private void openChromaKeyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            somthn.Owner = this;
+            somthn.Show();
+            this.Hide();
         }
     }
 }
